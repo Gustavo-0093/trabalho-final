@@ -5,16 +5,15 @@
 }
 
 :root {
-  --cor-fundo: #121212;        
-  --cor-fundo-claro: #1a1a1a;   
-  --cor-card: #222222;  
-  --cor-primaria: #e53935;      
-  --cor-primaria-escura: #b71c1c; 
-  --cor-destaque: #ef5350;      
-  --cor-texto: #f5f5f5;         
-  --cor-texto-suave: #a3a3a3;   
-  
-  --raio: 8px; 
+  --cor-fundo: #121212;
+  --cor-fundo-claro: #1a1a1a;
+  --cor-card: #222222;
+  --cor-primaria: #e53935;
+  --cor-primaria-escura: #b71c1c;
+  --cor-destaque: #ef5350;
+  --cor-texto: #f5f5f5;
+  --cor-texto-suave: #a3a3a3;
+  --raio: 8px;
   --sombra: 0 4px 12px rgba(0, 0, 0, 0.4);
   --sombra-hover: 0 8px 24px rgba(0, 0, 0, 0.6);
 }
@@ -177,6 +176,7 @@ body {
   transform: translateY(-2px);
   box-shadow: 0 6px 15px rgba(0, 0, 0, 0.5);
 }
+
 .secao-cabecalho {
   text-align: center;
   max-width: 700px;
@@ -276,6 +276,7 @@ body {
   color: #fff;
   transform: translateY(-2px);
 }
+
 .timeline-secao {
   padding: 5rem 0;
   max-width: 1200px;
@@ -439,7 +440,7 @@ body {
   display: flex;
   flex-wrap: wrap;
   gap: 1.5rem;
-  justify-content: center; 
+  justify-content: center;
 }
 
 .projeto-card {
@@ -452,13 +453,14 @@ body {
   display: flex;
   flex-direction: column;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  width: calc(33.333% - 1rem); 
+  width: calc(33.333% - 1rem);
 }
 
 .projeto-card:hover {
   transform: translateY(-4px);
   box-shadow: var(--sombra-hover);
 }
+
 .projeto-card--centro {
   text-align: center;
 }
@@ -492,6 +494,32 @@ body {
 .projeto-link:hover {
   color: var(--cor-texto);
   padding-left: 5px;
+}
+
+.projeto-galeria {
+  display: flex;
+  gap: 0.5rem;
+  width: 100%;
+  height: 150px;
+  margin-bottom: 1.2rem;
+  overflow: hidden;
+  border-radius: calc(var(--raio) - 2px);
+  background-color: var(--cor-fundo);
+}
+
+.projeto-img {
+  flex: 1;
+  min-width: 0;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  transition: transform 0.4s ease, filter 0.4s ease;
+  filter: brightness(0.9);
+}
+
+.projeto-card:hover .projeto-img {
+  transform: scale(1.06);
+  filter: brightness(1.1);
 }
 
 .footer {
@@ -547,12 +575,13 @@ body {
   color: #757575;
   margin-top: 1rem;
 }
+
 @media (max-width: 1023px) {
   .hero-titulo {
     font-size: 2.3rem;
   }
   .projeto-card {
-    width: calc(50% - 0.75rem)
+    width: calc(50% - 0.75rem);
   }
 }
 
@@ -578,6 +607,6 @@ body {
     flex: 0 0 260px;
   }
   .projeto-card {
-    width: 100%; 
+    width: 100%;
   }
 }
