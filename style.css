@@ -5,17 +5,16 @@
 }
 
 :root {
-  /* Paleta Escura Clássica e Limpa (Sem Neon) */
-  --cor-fundo: #121212;         /* Cinza muito escuro (fundo principal) */
-  --cor-fundo-claro: #1a1a1a;   /* Cinza um pouco mais claro (seções alternadas) */
-  --cor-card: #222222;          /* Fundo dos cards (destacado do fundo) */
-  --cor-primaria: #e53935;      /* Vermelho clássico ajustado para dark mode */
-  --cor-primaria-escura: #b71c1c; /* Vermelho mais profundo para hover */
-  --cor-destaque: #ef5350;      /* Vermelho suave para pequenos detalhes */
-  --cor-texto: #f5f5f5;         /* Branco suave para não cansar a vista */
-  --cor-texto-suave: #a3a3a3;   /* Cinza médio/claro para textos secundários */
+  --cor-fundo: #121212;        
+  --cor-fundo-claro: #1a1a1a;   
+  --cor-card: #222222;  
+  --cor-primaria: #e53935;      
+  --cor-primaria-escura: #b71c1c; 
+  --cor-destaque: #ef5350;      
+  --cor-texto: #f5f5f5;         
+  --cor-texto-suave: #a3a3a3;   
   
-  --raio: 8px; /* Cantos menos arredondados, visual mais sério */
+  --raio: 8px; 
   --sombra: 0 4px 12px rgba(0, 0, 0, 0.4);
   --sombra-hover: 0 8px 24px rgba(0, 0, 0, 0.6);
 }
@@ -29,14 +28,6 @@ body {
   background-color: var(--cor-fundo);
   color: var(--cor-texto);
   line-height: 1.6;
-}
-
-code {
-  background-color: rgba(229, 57, 53, 0.12);
-  color: var(--cor-destaque);
-  padding: 2px 6px;
-  border-radius: 4px;
-  font-family: 'Courier New', monospace;
 }
 
 @keyframes fadeIn {
@@ -186,7 +177,6 @@ code {
   transform: translateY(-2px);
   box-shadow: 0 6px 15px rgba(0, 0, 0, 0.5);
 }
-
 .secao-cabecalho {
   text-align: center;
   max-width: 700px;
@@ -216,10 +206,81 @@ code {
   font-size: 1.05rem;
 }
 
+.sobre-secao {
+  padding: 5rem 1.5rem;
+  background-color: var(--cor-fundo);
+}
+
+.sobre-conteudo {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.sobre-texto {
+  animation: slideUp 1s ease;
+}
+
+.sobre-texto h3 {
+  font-size: 1.8rem;
+  margin-bottom: 1.2rem;
+  color: var(--cor-texto);
+}
+
+.sobre-texto h3 span {
+  color: var(--cor-primaria);
+}
+
+.sobre-texto p {
+  color: var(--cor-texto-suave);
+  font-size: 1.05rem;
+  margin-bottom: 1.2rem;
+}
+
+.trajetoria-principal {
+  font-size: 1.3rem !important;
+  color: var(--cor-texto) !important;
+  margin-top: 1.5rem;
+  margin-bottom: 2rem !important;
+}
+
+.subtitulo-vermelho {
+  color: var(--cor-primaria);
+  font-size: 1.4rem;
+  margin-top: 2rem;
+  margin-bottom: 0.8rem;
+  font-weight: 600;
+}
+
+.sobre-habilidades {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  margin-top: 2.5rem;
+  justify-content: center;
+}
+
+.habilidade-tag {
+  background-color: rgba(229, 57, 53, 0.12);
+  color: var(--cor-destaque);
+  padding: 0.4rem 1rem;
+  border-radius: 50px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  border: 1px solid rgba(229, 57, 53, 0.2);
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.habilidade-tag:hover {
+  background-color: var(--cor-primaria);
+  color: #fff;
+  transform: translateY(-2px);
+}
 .timeline-secao {
   padding: 5rem 0;
   max-width: 1200px;
   margin: 0 auto;
+  background-color: var(--cor-fundo-claro);
 }
 
 .timeline-secao .secao-cabecalho {
@@ -273,7 +334,7 @@ code {
   left: 0;
   right: 0;
   height: 3px;
-  background: var(--cor-fundo-claro);
+  background: var(--cor-fundo);
   border-radius: 4px;
 }
 
@@ -369,15 +430,16 @@ code {
 
 .projetos-secao {
   padding: 5rem 1.5rem;
-  background-color: var(--cor-fundo-claro);
+  background-color: var(--cor-fundo);
 }
 
 .projetos-grade {
   max-width: 1100px;
   margin: 0 auto;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  display: flex;
+  flex-wrap: wrap;
   gap: 1.5rem;
+  justify-content: center; 
 }
 
 .projeto-card {
@@ -390,15 +452,19 @@ code {
   display: flex;
   flex-direction: column;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  width: calc(33.333% - 1rem); 
 }
 
 .projeto-card:hover {
   transform: translateY(-4px);
   box-shadow: var(--sombra-hover);
 }
-
 .projeto-card--centro {
-  grid-column: 2;
+  text-align: center;
+}
+
+.projeto-card--centro .projeto-link {
+  align-self: center;
 }
 
 .projeto-card h3 {
@@ -481,16 +547,12 @@ code {
   color: #757575;
   margin-top: 1rem;
 }
-
 @media (max-width: 1023px) {
   .hero-titulo {
     font-size: 2.3rem;
   }
-  .projetos-grade {
-    grid-template-columns: repeat(2, 1fr);
-  }
-  .projeto-card--centro {
-    grid-column: auto;
+  .projeto-card {
+    width: calc(50% - 0.75rem)
   }
 }
 
@@ -515,7 +577,7 @@ code {
   .item {
     flex: 0 0 260px;
   }
-  .projetos-grade {
-    grid-template-columns: 1fr;
+  .projeto-card {
+    width: 100%; 
   }
 }
